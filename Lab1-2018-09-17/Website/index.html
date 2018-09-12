@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="google-signin-client_id" content="545640970176-mqql7jmfsridgm319n3fatpfct7ieijs.apps.googleusercontent.com">
     <title> Login page </title>
 
     <!-- JQuery JavaScript library -->
@@ -14,7 +15,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Coustard" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Coustard" rel="stylesheet">
+
+    <!-- Google platform -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -27,6 +31,14 @@
         <header>
             <h1>Login</h1>
         </header>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>Log in with Google: <div class="g-signin2" data-onsuccess="onSignIn">Sign in</div></p>
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-5">
@@ -50,17 +62,7 @@
             </div>
         </div>
 
-        <p>&nbsp;</p>
-
-<!--
-        <input type="button" ng-click="onGoogleLogin()" value="Login" style="width: 100px; height: 60px"/>
--->
-        <!-- Binding variables from Angular JS -->
-
-<!--
-        <img ng-src="{{g_image}}" style="width: 100px; height: 100px">
--->
-        
+        <p>&nbsp;</p> <!-- spacer -->        
     </div>
 
     <footer>
