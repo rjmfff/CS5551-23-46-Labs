@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS Login</title>
+
+    <!-- Angular Script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <h1>Google Login</h1>
+    <input type="button" ng-click="onGoogleLogin()" value="Login" style="width: 100px; height: 60px"/>
+    <!-- Binding variables from Angular JS -->
+    <h4>{{gmail.username}}</h4>
+    <h4>{{gmail.email}}</h4>
+    <img ng-src="{{g_image}}" style="width: 100px; height: 100px">
+
+    <!-- App reference -->
+    <script src="script.js" type="text/javascript"></script>
+    <!-- Calling Google login API -->
+    <script type="text/javascript">
+        (function(){
+            var p = document.createElement('script');
+            p.type = 'text/javascript';
+            <!-- Ascynchronous or Synchronous -->
+            p.async = true;
+            <!-- Adding source to API -->
+            <!-- onLoadFunction is used to load the API called for -->
+            p.src = "https://apis.google.com/js/client.js?onload=onLoadFunction";
+            <!-- Create element and Get element -->
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(p, s);
+        })();
+    </script>
+</body>
+</html>
