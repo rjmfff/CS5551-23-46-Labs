@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Login page </title>
+
+    <!-- JQuery JavaScript library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Angular Script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Coustard" rel="stylesheet"> 
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" type="image/png" href="content/favicon.png"/>
+    
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <div class="container">
+        
+        <header>
+            <h1>Login</h1>
+        </header>
+
+        <input type="button" ng-click="onGoogleLogin()" value="Login" style="width: 100px; height: 60px"/>
+        <!-- Binding variables from Angular JS -->
+        <h4>{{gmail.username}}</h4>
+        <h4>{{gmail.email}}</h4>
+        <img ng-src="{{g_image}}" style="width: 100px; height: 100px">
+        
+    </div>
+
+    <footer>
+        <p>Built by Rachel Singh and Poonam Kankariya</p>
+    </footer>
+    
+        
+        
+
+    <!-- App reference -->
+    <script src="script.js" type="text/javascript"></script>
+    <!-- Calling Google login API -->
+    <script type="text/javascript">
+        /*
+        (function(){
+            var p = document.createElement('script');
+            p.type = 'text/javascript';
+            <!-- Ascynchronous or Synchronous -->
+            p.async = true;
+            <!-- Adding source to API -->
+            <!-- onLoadFunction is used to load the API called for -->
+            p.src = "https://apis.google.com/js/client.js?onload=onLoadFunction";
+            <!-- Create element and Get element -->
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(p, s);
+        })();
+        */
+    </script>
+</body>
+</html>
