@@ -19,21 +19,47 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <link rel="shortcut icon" type="image/png" href="content/favicon.png"/>
-    
+    <link rel="shortcut icon" type="image/png" href="content/favicon.png"/>    
 </head>
-<body ng-app="myApp" ng-controller="myController">
+<body ng-app="myApp" ng-controller="loginController" ng-init="initialize()">
     <div class="container">
         
         <header>
             <h1>Login</h1>
         </header>
 
+        <div class="row">
+            <div class="col-md-5">
+                <p><sub>Username</sub></p>
+            </div>
+            <div class="col-md-5">
+                <p><sub>Email</sub></p>
+            </div>
+            <div class="col-md-2">
+            </div>
+        <div class="row">
+        </div>
+            <div class="col-md-5">
+                <input type="text" placeholder="{{username}}" class="form-control" id="username">
+            </div>
+            <div class="col-md-5">
+                <input type="text" placeholder="{{email}}" class="form-control" id="email">
+            </div>
+            <div class="col-md-2">
+                <input type="button" ng-click="googleLogin()" value="Login" class="btn btn-primary form-control">
+            </div>
+        </div>
+
+        <p>&nbsp;</p>
+
+<!--
         <input type="button" ng-click="onGoogleLogin()" value="Login" style="width: 100px; height: 60px"/>
+-->
         <!-- Binding variables from Angular JS -->
-        <h4>{{gmail.username}}</h4>
-        <h4>{{gmail.email}}</h4>
+
+<!--
         <img ng-src="{{g_image}}" style="width: 100px; height: 100px">
+-->
         
     </div>
 
@@ -44,24 +70,7 @@
         
         
 
-    <!-- App reference -->
-    <script src="script.js" type="text/javascript"></script>
-    <!-- Calling Google login API -->
-    <script type="text/javascript">
-        /*
-        (function(){
-            var p = document.createElement('script');
-            p.type = 'text/javascript';
-            <!-- Ascynchronous or Synchronous -->
-            p.async = true;
-            <!-- Adding source to API -->
-            <!-- onLoadFunction is used to load the API called for -->
-            p.src = "https://apis.google.com/js/client.js?onload=onLoadFunction";
-            <!-- Create element and Get element -->
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(p, s);
-        })();
-        */
-    </script>
+    <!-- Include the script -->
+    <script src="scripts/login.js"></script>
 </body>
 </html>
