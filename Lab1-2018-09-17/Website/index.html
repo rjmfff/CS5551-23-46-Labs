@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-signin-client_id" content="545640970176-mqql7jmfsridgm319n3fatpfct7ieijs.apps.googleusercontent.com">
     <title> Login page </title>
 
     <!-- JQuery JavaScript library -->
@@ -17,11 +16,14 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Coustard" rel="stylesheet">
 
-    <!-- Google platform -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Hello.js OAuth Library -->
+    <script src="scripts/hello.all.min.js"></script>
+
+    <!-- Backend functionality -->
+    <script src="scripts/backend.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="content/favicon.png"/>    
 </head>
@@ -31,34 +33,13 @@
         <header>
             <h1>Login</h1>
         </header>
-
+        
         <div class="row">
             <div class="col-md-6">
-                <p>Log in with Google: <div class="g-signin2" data-onsuccess="onSignIn">Sign in</div></p>
+                <p>Log in with Google:</p>
+                <p><button onclick="hello('google').login()" class="btn btn-primary">Sign in</button></p>
             </div>
             <div class="col-md-6">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-5">
-                <p><sub>Username</sub></p>
-            </div>
-            <div class="col-md-5">
-                <p><sub>Email</sub></p>
-            </div>
-            <div class="col-md-2">
-            </div>
-        <div class="row">
-        </div>
-            <div class="col-md-5">
-                <input type="text" placeholder="{{username}}" class="form-control" id="username">
-            </div>
-            <div class="col-md-5">
-                <input type="text" placeholder="{{email}}" class="form-control" id="email">
-            </div>
-            <div class="col-md-2">
-                <input type="button" ng-click="googleLogin()" value="Login" class="btn btn-primary form-control">
             </div>
         </div>
 
@@ -68,11 +49,5 @@
     <footer>
         <p>Built by Rachel Singh and Poonam Kankariya</p>
     </footer>
-    
-        
-        
-
-    <!-- Include the script -->
-    <script src="scripts/login.js"></script>
 </body>
 </html>

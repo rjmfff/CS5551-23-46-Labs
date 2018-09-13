@@ -1,4 +1,5 @@
 body { padding: 0; }
+
 header { background: #933232; color: #fff; margin-bottom: 10pt; }
 header h1 { padding-left: 10pt; padding-top: 10pt; padding-bottom: 10pt; margin: 0; font-family: 'Coustard', serif; }
 
@@ -12,6 +13,9 @@ nav ul li.right { list-style-type: none; float: right; margin-right: 0; }
 nav { border-bottom: solid 1px #ddd; margin: 10px auto; }
 nav ul li a { color: #933232; font-weight: bold; font-family: 'Coustard', serif; }
 nav ul li a:hover { color: #933232; }
+
+#login-info { text-align: right; font-size: 18pt; font-family: 'Coustard', serif; padding-top: 10px; }
+#login-info img { margin-left: 20px; }
 
 /* From http://nicolasgallagher.com/micro-clearfix-hack/ */
 .cf:before,
