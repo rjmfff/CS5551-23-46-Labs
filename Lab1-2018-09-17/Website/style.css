@@ -17,6 +17,11 @@ nav ul li a:hover { color: #933232; }
 #login-info { text-align: right; font-size: 18pt; font-family: 'Coustard', serif; padding-top: 10px; }
 #login-info img { margin-left: 20px; }
 
+.icon { width: 48px; }
+.portrait { height: 200px; float: left; margin-right: 20px; margin-bottom: 20px; }
+
+p.name { font-weight: bold; font-style: italic; }
+
 /* From http://nicolasgallagher.com/micro-clearfix-hack/ */
 .cf:before,
 .cf:after {
