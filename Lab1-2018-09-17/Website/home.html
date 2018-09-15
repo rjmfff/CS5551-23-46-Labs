@@ -23,12 +23,13 @@
     <script src="scripts/hello.all.min.js"></script>
 
     <!-- Backend functionality -->
+    <script src="scripts/api.js"></script>
     <script src="scripts/backend.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="content/favicon.png"/>
     
 </head>
-<body ng-app="myApp" ng-controller="myController">
+<body ng-app="myApp" ng-controller="websiteController">
     
     <div class="page-container container">
         
@@ -46,11 +47,46 @@
             </ul>
         </nav>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor, lorem sit amet laoreet aliquam, urna tellus aliquet nisi, eget vehicula erat erat nec purus. Pellentesque convallis luctus dui, et hendrerit velit consectetur ut. Fusce lectus sem, lobortis a neque a, lacinia finibus dui. Aenean non dolor quis ligula mollis sagittis. Praesent ac massa semper, tincidunt ex vitae, iaculis libero. Fusce fermentum luctus magna id condimentum. Praesent in tempor nunc, eu egestas mauris. Integer quis purus finibus, blandit lorem sit amet, tincidunt orci. Praesent accumsan vehicula libero, nec auctor eros sagittis et. Mauris ultricies egestas arcu, sit amet iaculis neque fermentum in. Phasellus luctus elementum nibh at feugiat. </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Food Search</h3>
 
-        <p>Mauris commodo felis non iaculis tempor. Nullam ut erat ac sem mattis consequat. Ut elementum sapien et congue rhoncus. Nullam turpis purus, consequat ut metus quis, faucibus feugiat lacus. Nullam vestibulum finibus ligula vitae lobortis. Mauris sagittis pharetra sem id rutrum. Maecenas rhoncus neque sit amet vulputate congue. Aenean pretium arcu lacus, nec aliquet mi viverra interdum. Nunc eget urna urna. Curabitur porta tellus ut luctus dignissim. Vestibulum porttitor laoreet lectus ut rhoncus. Aliquam nulla arcu, laoreet sit amet libero quis, tristique placerat nulla. </p>
+                    <!-- user input -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Recipe:</p>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" value="" placeholder="Recipe name" ng-model="recipeName">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="button" class="btn btn-success" value="Search!" ng-click="getRecipe()">
+                        </div>
+                    </div>
 
-        <p>Suspendisse sed elit vel lorem fringilla posuere. Morbi congue vulputate elementum. Mauris sit amet tristique ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus tincidunt nulla non mauris tristique, vitae consectetur erat condimentum. Praesent rhoncus sagittis libero nec finibus. Nam tincidunt mauris augue, ut vestibulum quam blandit vitae. Donec aliquet vestibulum odio nec iaculis. Nulla sed turpis placerat, varius tellus ut, dignissim justo. Suspendisse pretium, ipsum nec imperdiet iaculis, orci ligula tincidunt erat, a semper justo sem vitae libero. Quisque sit amet tellus a diam imperdiet tempus ut eu orci. Nullam ac aliquam neque, in feugiat magna. Nullam eget magna viverra, scelerisque est sit amet, suscipit nulla. Praesent pretium erat vel molestie commodo. Duis eget varius arcu. </p>
+                    <br><br>
+
+                    <!-- output info -->
+                    <div class="row" id="food-info">
+                        <div class="col-md-12">
+                            <h4>Food:</h4>
+                            <p ng-bind="food">{{ food }}</p>
+                        </div>
+                        <div class="col-md-12">
+                            <h4>Calories:</h4>
+                            <p ng-bind="calories">{{ calories }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    main
+                </div>
+                <div class="col-md-3">
+                    other API
+                </div>
+            </div>
+        </div>
         
     </div>
 
