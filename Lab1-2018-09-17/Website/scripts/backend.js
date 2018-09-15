@@ -23,9 +23,12 @@ $( document ).ready( function() {
 
     hello.on('auth.login', function (auth) {
         hello(auth.network).api('/me').then(function (resp) {
+            console.log( "Logged in" );
             var path = window.location.pathname;
+            var host = window.location.hostname;
+            console.log( path, host );
 
-            if ( path.includes( "index.html" ) )
+            if ( path.includes( "index.html" ) || path == "/CS5551/" )
             {
                 window.location.replace( "home.html" );
             }
