@@ -52,16 +52,15 @@
             <div class="row">
                 <div class="col-md-3">
                     <h3>Bored?</h3>
+                    <p><sub>From <a href="https://www.boredapi.com/">Bored API</a></sub></p>
 
                     <p>Something you can do for fun is: <span id="activity-suggestion"></span></p>
 
-                    <hr>
-                    
-                    <h3>Cats</h3>
 
                     <hr>
                     
                     <h3>Food Search</h3>
+                    <p><sub>From <a href="https://developer.nutritionix.com/">Nutritionix API</a></sub></p>
 
                     <!-- user input -->
                     <div class="row">
@@ -89,6 +88,18 @@
                             <p ng-bind="calories">{{ calories }}</p>
                         </div>
                     </div>
+
+                    <hr>
+
+                    <h3>Pokémon</h3>
+                    <p><sub>From <a href="https://www.pokeapi.co/">PokéAPI</a></sub></p>
+
+                    <div id="pokemon-info">
+                        <p><img src="" id="pokemon-image"></p>
+                        <p>Pokémon #<span id="pokemon-number"></span> is <span id="pokemon-name"></span></p>
+                    </div>
+
+                    
                 </div>
                 <div class="col-md-9">
                     <p>This is the home page. It contains some widgets that you can use if you are bored.</p>

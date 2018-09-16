@@ -3,8 +3,13 @@ myApp.controller ('websiteController', function ($scope, $http) {
     
     $scope.initialize = function() {
         console.log( "Initialize angular" );
+        $scope.pokemonCounter = 1;
+        
         $scope.getActivity();
         window.setInterval( $scope.getActivity, 10000 );
+        
+        $scope.getPokemon();
+        window.setInterval( $scope.getPokemon, 10000 );
     }
     
     $scope.getRecipe = function() {
@@ -29,7 +34,6 @@ myApp.controller ('websiteController', function ($scope, $http) {
             $( "#food-info" ).fadeIn( "fast" );
         } );
     };
-
     
     $scope.getActivity = function() {
         console.log( "Get activity" );
@@ -41,8 +45,29 @@ myApp.controller ('websiteController', function ($scope, $http) {
         $http( { method: "GET", url: url } ).then( function successCallback( response ) {
             console.log( response );
 
+            $( "#activity-suggestion" ).css( "display", "none" );
+            
             $( "#activity-suggestion" ).html( response["data"]["activity"] );
             $( "#activity-suggestion" ).fadeIn( "fast" );
+        } );
+    };
+
+    $scope.getPokemon = function() {
+        var url = "https://www.pokeapi.co/api/v2/pokemon-form/" + $scope.pokemonCounter + "/";
+        console.log( url );
+        
+        // Use AJAX to get the information
+        $http( { method: "GET", url: url } ).then( function successCallback( response ) {
+            console.log( response );
+
+            $( "#pokemon-info" ).css( "display", "none" );
+
+            $( "#pokemon-number" ).html( $scope.pokemonCounter );
+            $( "#pokemon-name" ).html( response["data"]["pokemon"]["name"] );
+            $( "#pokemon-image" ).attr( "src", response["data"]["sprites"]["front_default"] );
+            $( "#pokemon-info" ).fadeIn( "fast" );
+
+            $scope.pokemonCounter++;
         } );
     };
 
