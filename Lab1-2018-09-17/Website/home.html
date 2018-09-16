@@ -24,12 +24,13 @@
 
     <!-- Backend functionality -->
     <script src="scripts/api.js"></script>
-    <script src="scripts/backend.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/login.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="content/favicon.png"/>
     
 </head>
-<body ng-app="myApp" ng-controller="websiteController">
+<body ng-app="myApp" ng-controller="websiteController" ng-init="initialize()">
     
     <div class="page-container container">
         
@@ -50,18 +51,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
+                    <h3>Bored?</h3>
+
+                    <p>Something you can do for fun is: <span id="activity-suggestion"></span></p>
+
+                    <hr>
+                    
+                    <h3>Cats</h3>
+
+                    <hr>
+                    
                     <h3>Food Search</h3>
 
                     <!-- user input -->
                     <div class="row">
                         <div class="col-md-12">
-                            <p>Recipe:</p>
-                        </div>
-                        <div class="col-md-10">
                             <input type="text" class="form-control" value="" placeholder="Recipe name" ng-model="recipeName">
                         </div>
-                        <div class="col-md-2">
-                            <input type="button" class="btn btn-success" value="Search!" ng-click="getRecipe()">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="button" class="btn btn-success form-control" value="Search!" ng-click="getRecipe()">
                         </div>
                     </div>
 
@@ -79,11 +90,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    main
-                </div>
-                <div class="col-md-3">
-                    other API
+                <div class="col-md-9">
+                    <p>This is the home page. It contains some widgets that you can use if you are bored.</p>
                 </div>
             </div>
         </div>

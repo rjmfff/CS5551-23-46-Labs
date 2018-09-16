@@ -22,6 +22,8 @@ nav ul li a:hover { color: #933232; }
 
 p.name { font-weight: bold; font-style: italic; }
 
+#activity-suggestion { font-weight: bold; }
+
 #food-info { display: none; }
 
 /* From http://nicolasgallagher.com/micro-clearfix-hack/ */
