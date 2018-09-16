@@ -27,6 +27,8 @@ p.name { font-weight: bold; font-style: italic; }
 #food-info { display: none; }
 
 img.full-width { width: 100%; }
+img.right { float: right; margin-left: 20px; }
+img.left { float: left; margin-right: 20px; }
 
 /* From http://nicolasgallagher.com/micro-clearfix-hack/ */
 .cf:before,
