@@ -34,7 +34,7 @@ img.left { float: left; margin-right: 20px; }
 
 .failed-login { background: #ffc5c5; border: solid 2px #f27c7c; padding: 20px; color: #5a0909; font-size: 20pt; text-align: center; display: none; }
 
-.google-button { background-image: url( 'content/btn_google_signin_light_normal_web.png' ); border: none; width: 191px; height: 46px; }
+.google-button { background-image: url( 'content/googlesignin.png' ); border: none; width: 191px; height: 46px; }
 
 /* From http://nicolasgallagher.com/micro-clearfix-hack/ */
 .cf:before,

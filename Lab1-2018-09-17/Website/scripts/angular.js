@@ -42,6 +42,10 @@ myApp.controller ('loginController', function ($scope, $http) {
     };
 
     $scope.loginGoogle = function() {
+        hello('google').login();
+
+
+        
         // Check for authentication
         hello.on('auth.login', function (auth) {
             hello(auth.network).api('/me').then(function (resp) {
@@ -50,6 +54,8 @@ myApp.controller ('loginController', function ($scope, $http) {
                 window.localStorage.setItem( "email", resp.email );
                 window.localStorage.setItem( "name", resp.name );
                 window.localStorage.setItem( "thumbnail", resp.thumbnail );
+
+                console.log( "Logged in" );
 
                 $scope.gotoHome();
             });
@@ -62,6 +68,7 @@ myApp.controller ('loginController', function ($scope, $http) {
     };
 
     $scope.gotoHome = function() {
+        console.log( "Go home" );
         window.location.href = "home.html";
     };
 
