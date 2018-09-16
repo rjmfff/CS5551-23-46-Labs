@@ -26,6 +26,8 @@ p.name { font-weight: bold; font-style: italic; }
 
 #food-info { display: none; }
 
+img.full-width { width: 100%; }
+
 /* From http://nicolasgallagher.com/micro-clearfix-hack/ */
 .cf:before,
 .cf:after {

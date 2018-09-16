@@ -53,57 +53,34 @@
                 <div class="col-md-3">
                     <h3>Bored?</h3>
                     <p><sub>From <a href="https://www.boredapi.com/">Bored API</a></sub></p>
-
-                    <p>Something you can do for fun is: <span id="activity-suggestion"></span></p>
-
-
+                    <p>Something you can do for fun is: <span id="activity-suggestion"></span></p>                    
+                </div>
+                
+                <div class="col-md-6">
+                    <h2>Welcome</h2>
+                    <p>This is the home page. It contains some widgets that you can use if you are bored.</p>
                     <hr>
-                    
-                    <h3>Food Search</h3>
-                    <p><sub>From <a href="https://developer.nutritionix.com/">Nutritionix API</a></sub></p>
-
-                    <!-- user input -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control" value="" placeholder="Recipe name" ng-model="recipeName">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <input type="button" class="btn btn-success form-control" value="Search!" ng-click="getRecipe()">
-                        </div>
-                    </div>
-
-                    <br><br>
-
-                    <!-- output info -->
-                    <div class="row" id="food-info">
-                        <div class="col-md-12">
-                            <h4>Food:</h4>
-                            <p ng-bind="food">{{ food }}</p>
-                        </div>
-                        <div class="col-md-12">
-                            <h4>Calories:</h4>
-                            <p ng-bind="calories">{{ calories }}</p>
-                        </div>
-                    </div>
-
-                    <hr>
-
+                    <h2>Team 5</h2>
+                    <p>This lab is made by team 5-2, but here is a photo of all of team 5 in Rachel's attic.</p>
+                    <p><img src="content/team-photo.jpg" class="full-width"></p>
+                    <p>Team 5 (left-to-right) is:</p>
+                    <ul>
+                        <li>Rachel Singh</li>
+                        <li>Priyanka Vinayak Gaikwad</li>
+                        <li>Tejaswi Ayyadapu</li>
+                        <li>Poonam Kankariya</li>
+                    </ul>
+                </div>                
+                
+                <div class="col-md-3">
                     <h3>Pokémon</h3>
                     <p><sub>From <a href="https://www.pokeapi.co/">PokéAPI</a></sub></p>
-
                     <div id="pokemon-info">
                         <p><img src="" id="pokemon-image"></p>
                         <p>Pokémon #<span id="pokemon-number"></span> is <span id="pokemon-name"></span></p>
                     </div>
-
-                    
                 </div>
-                <div class="col-md-9">
-                    <p>This is the home page. It contains some widgets that you can use if you are bored.</p>
-                </div>
+                
             </div>
         </div>
         
