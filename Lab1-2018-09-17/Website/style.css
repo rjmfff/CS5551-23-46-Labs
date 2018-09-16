@@ -29,6 +29,9 @@ p.name { font-weight: bold; font-style: italic; }
 img.full-width { width: 100%; }
 img.right { float: right; margin-left: 20px; }
 img.left { float: left; margin-right: 20px; }
+.center { text-align: center; }
+
+.google-button { background-image: url( 'content/btn_google_signin_light_normal_web.png' ); border: none; width: 191px; height: 46px; }
 
 /* From http://nicolasgallagher.com/micro-clearfix-hack/ */
 .cf:before,
