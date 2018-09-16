@@ -30,6 +30,9 @@ img.full-width { width: 100%; }
 img.right { float: right; margin-left: 20px; }
 img.left { float: left; margin-right: 20px; }
 .center { text-align: center; }
+.email-small { font-size: 12pt; }
+
+.failed-login { background: #ffc5c5; border: solid 2px #f27c7c; padding: 20px; color: #5a0909; font-size: 20pt; text-align: center; display: none; }
 
 .google-button { background-image: url( 'content/btn_google_signin_light_normal_web.png' ); border: none; width: 191px; height: 46px; }
 

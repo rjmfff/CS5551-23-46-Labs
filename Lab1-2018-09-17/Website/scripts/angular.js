@@ -1,8 +1,92 @@
-var myApp = angular.module ("myApp" , []);
-myApp.controller ('websiteController', function ($scope, $http) {
+var myApp = angular.module ("labApp" , []);
+
+myApp.controller ('loginController', function ($scope, $http) {
+    $scope.initialize = function() {
+        console.log( "Initialize LOGIN controller" );
+
+        // Initialize Hello.js
+        hello.init({
+            google: "545640970176-mqql7jmfsridgm319n3fatpfct7ieijs.apps.googleusercontent.com"
+        });
+
+        // Hello.js logout        
+        hello.on('auth.logout', function () {
+            window.location.replace( "index.html" );
+        });
+
+        if ( window.localStorage.getItem( "email" ) == null )
+        {
+            // Not logged in
+            $scope.logout();
+        }
+        else
+        {
+            $scope.setUserHeader();
+        }
+    }
+
+    $scope.registerAccount = function() {
+        console.log( "Register Account function" );
+        window.localStorage.setItem( "email", $( "#register-email" ).val() );
+        window.localStorage.setItem( "name", $( "#register-name" ).val() );
+        window.localStorage.setItem( "password", $( "#register-password" ).val() );
+        
+        $scope.gotoHome();
+    };
+
+    $scope.login = function() {
+        if ( $( "#login-email" ).val() == window.localStorage.getItem( "email" )
+            && $( "#login-password" ).val() == window.localStorage.getItem( "password" ) )
+        {
+            $scope.gotoHome();
+        }
+        else
+        {
+            $( ".failed-login" ).fadeIn( "fast" );
+        }
+    };
+
+    $scope.loginGoogle = function() {
+        // Check for authentication
+        hello.on('auth.login', function (auth) {
+            hello(auth.network).api('/me').then(function (resp) {
+
+                // Save the information
+                window.localStorage.setItem( "email", resp.email );
+                window.localStorage.setItem( "name", resp.name );
+                window.localStorage.setItem( "thumbnail", resp.thumbnail );
+
+                $scope.gotoHome();
+            });
+        });
+    };
+
+    $scope.logout = function() {
+        hello('google').logout();
+        window.location.href = "index.html";
+    };
+
+    $scope.gotoHome = function() {
+        window.location.href = "home.html";
+    };
+
+    $scope.setUserHeader = function() {
+        var image = window.localStorage.getItem( "thumbnail" );
+        var name = window.localStorage.getItem( "name" );
+        var email = window.localStorage.getItem( "email" );
+        if ( image == null )
+        {
+            image = "content/unknown-image.png";
+        }
+        
+        $( "#login-info" ).html( name + " <span class='email-small'>(" + email + ")</span> <img src='" + image + "'>" );
+    };
+} );
+
+myApp.controller ('apiController', function ($scope, $http) {
     
     $scope.initialize = function() {
-        console.log( "Initialize angular" );
+        console.log( "Initialize API controller" );
         $scope.pokemonCounter = 1;
         
         $scope.getActivity();
@@ -11,30 +95,7 @@ myApp.controller ('websiteController', function ($scope, $http) {
         $scope.getPokemon();
         window.setInterval( $scope.getPokemon, 10000 );
     }
-    
-    $scope.getRecipe = function() {
-        $scope.searchFood( $scope.recipeName );
-    }
 
-    $scope.searchFood = function( text ) {
-        // Build the URL string for the API call to Nutritionix
-        var nURL = "https://api.nutritionix.com/v1_1/"
-            + "search/" + text + "?results=0:1&fields=*"
-            + "&appId=" + NUTRITIONIX_APPID
-            + "&appKey=" + NUTRITIONIX_APPKEY;
-        console.log( nURL );
-
-        // Use AJAX to get the information
-        $http( { method: "GET", url: nURL } ).then( function successCallback( response ) {
-            console.log( response );
-            // Copy the information into scope variables.
-            $scope.calories = response["data"]["hits"][0]["fields"]["nf_calories"];
-            $scope.food = response["data"]["hits"][0]["fields"]["item_name"];
-
-            $( "#food-info" ).fadeIn( "fast" );
-        } );
-    };
-    
     $scope.getActivity = function() {
         console.log( "Get activity" );
         // https://www.boredapi.com/api/activity/

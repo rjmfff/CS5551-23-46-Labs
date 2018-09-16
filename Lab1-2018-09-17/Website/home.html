@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
     
 </head>
-<body ng-app="myApp" ng-controller="websiteController" ng-init="initialize()">
+<body ng-app="labApp" ng-controller="loginController" ng-init="initialize()">
     
     <div class="page-container container">
         
@@ -46,46 +46,50 @@
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li class="right"><a href="#" onclick="hello('google').logout()">Log Out</a></li>
+                <li class="right"><a href="#" ng-click="logout()">Log Out</a></li>
             </ul>
         </nav>
 
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-md-9">
-                    <h2>Welcome</h2>
-                    <p> Home page is the very first page the user is presented upon successful login into an application. The content presented on this page may vary across applications. The basic idea is to enable the user to start using the application from this page. This page may provide the user with general welcome notation and application description. It shall also include links to several different aspects of the applciation, either directly or using a Menu bar. It also provides the user with a logout option to exit out of the application.</p>
-                    <p>This page contains some widgets that you can use if you are bored.</p>
-                    <hr>
-                    <h2>Team 5</h2>
-                    <p>This lab is made by team 5-2, but here is a photo of all of team 5 in Rachel's attic.</p>
-                    <p><img src="content/team-photo.jpg" class="full-width"></p>
-                    <p>Team 5 (left-to-right) is:</p>
-                    <ul>
-                        <li>Rachel Singh</li>
-                        <li>Priyanka Vinayak Gaikwad</li>
-                        <li>Tejaswi Ayyadapu</li>
-                        <li>Poonam Kankariya</li>
-                    </ul>
-                </div>                
-                
-                <div class="col-md-3">
-                    <h3>Pokémon</h3>
-                    <p><sub>From <a href="https://www.pokeapi.co/">PokéAPI</a></sub></p>
-                    <div id="pokemon-info">
-                        <p><img src="" id="pokemon-image"></p>
-                        <p>Pokémon #<span id="pokemon-number"></span> is <span id="pokemon-name"></span></p>
-                    </div>
+        <div ng-controller="apiController" ng-init="initialize()">
 
-                    <hr>
+            <div class="container">
+                <div class="row">
                     
-                    <h3>Bored?</h3>
-                    <p><sub>From <a href="https://www.boredapi.com/">Bored API</a></sub></p>
-                    <p>Something you can do for fun is: <span id="activity-suggestion"></span></p>   
+                    <div class="col-md-9">
+                        <h2>Welcome</h2>
+                        <p> Home page is the very first page the user is presented upon successful login into an application. The content presented on this page may vary across applications. The basic idea is to enable the user to start using the application from this page. This page may provide the user with general welcome notation and application description. It shall also include links to several different aspects of the applciation, either directly or using a Menu bar. It also provides the user with a logout option to exit out of the application.</p>
+                        <p>This page contains some widgets that you can use if you are bored.</p>
+                        <hr>
+                        <h2>Team 5</h2>
+                        <p>This lab is made by team 5-2, but here is a photo of all of team 5 in Rachel's attic.</p>
+                        <p><img src="content/team-photo.jpg" class="full-width"></p>
+                        <p>Team 5 (left-to-right) is:</p>
+                        <ul>
+                            <li>Rachel Singh</li>
+                            <li>Priyanka Vinayak Gaikwad</li>
+                            <li>Tejaswi Ayyadapu</li>
+                            <li>Poonam Kankariya</li>
+                        </ul>
+                    </div>                
+                    
+                    <div class="col-md-3">
+                        <h3>Pokémon</h3>
+                        <p><sub>From <a href="https://www.pokeapi.co/">PokéAPI</a></sub></p>
+                        <div id="pokemon-info">
+                            <p><img src="" id="pokemon-image"></p>
+                            <p>Pokémon #<span id="pokemon-number"></span> is <span id="pokemon-name"></span></p>
+                        </div>
+
+                        <hr>
+                        
+                        <h3>Bored?</h3>
+                        <p><sub>From <a href="https://www.boredapi.com/">Bored API</a></sub></p>
+                        <p>Something you can do for fun is: <span id="activity-suggestion"></span></p>   
+                    </div>
+                    
                 </div>
-                
             </div>
+
         </div>
     </div>
 

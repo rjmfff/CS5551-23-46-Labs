@@ -24,13 +24,14 @@
 
     <!-- Backend functionality -->
     <script src="scripts/login.js"></script>
+    <script src="scripts/angular.js"></script>
 
     <link rel="shortcut icon" type="image/png" href="content/favicon.png"/>
 
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
     
 </head>
-<body ng-app="myApp" ng-controller="myController">
+<body ng-app="labApp" ng-controller="loginController" ng-init="initialize()">
     
     <div class="page-container container">
         
@@ -44,7 +45,7 @@
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li class="right"><a href="#" onclick="hello('google').logout()">Log Out</a></li>
+                <li class="right"><a href="#" ng-click="logout()">Log Out</a></li>
             </ul>
         </nav>
 

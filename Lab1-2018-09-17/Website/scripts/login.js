@@ -1,5 +1,9 @@
 $( document ).ready( function() {
 
+    function logOut() {
+        window.location.href = "index.html";
+    };
+
     // Not logged in
     /*
     if ( hello.getAuthResponse('google') == null && !path.includes( "index.html" ) )
