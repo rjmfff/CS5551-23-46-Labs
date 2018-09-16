@@ -14,12 +14,7 @@ myApp.controller ('loginController', function ($scope, $http) {
             window.location.replace( "index.html" );
         });
 
-        if ( window.localStorage.getItem( "email" ) == null )
-        {
-            // Not logged in
-            $scope.logout();
-        }
-        else
+        if ( window.localStorage.getItem( "email" ) != null )
         {
             $scope.setUserHeader();
         }
